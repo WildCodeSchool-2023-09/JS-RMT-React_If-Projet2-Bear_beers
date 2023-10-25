@@ -13,7 +13,6 @@ function App() {
       <button type="button" onClick={getAllItems}>
         Get all items
       </button>
-      ;
     </div>
   );
 }
