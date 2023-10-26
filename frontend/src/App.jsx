@@ -1,40 +1,40 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
 import "./App.css";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [beerData, setBeerData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/beer`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => setBeerData(data))
+      .catch((err) => setError(err));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
-
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      {error ? (
+        <div>Error: {error.message}</div>
+      ) : (
+        <div className="biere-list">
+          {beerData.map((beer, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="biere" key={index}>
+              <p>{beer.nom}</p>
+              <img src={beer.img} alt={beer.nom} />
+              <p>{beer.Prix}€</p>
+              <p>{beer.description}</p>
+              <p>{beer.type}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
