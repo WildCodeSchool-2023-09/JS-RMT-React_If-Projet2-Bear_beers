@@ -17,19 +17,8 @@ function App() {
       .catch((err) => setError(err));
   }, []);
 
-  const getAllItems = () => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/beer`)
-      .then((response) => response.json())
-      .then((data) => console.info(data))
-      .catch((err) => console.error(err));
-  };
-
   return (
     <div className="App">
-      <button type="button" onClick={getAllItems}>
-        Get all items
-      </button>
-
       {error ? (
         <div>Error: {error.message}</div>
       ) : (
