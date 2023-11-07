@@ -1,40 +1,10 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import Form from "./components/Form";
 
 function App() {
-  const [beerData, setBeerData] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/beer`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setBeerData(data))
-      .catch((err) => setError(err));
-  }, []);
-
   return (
-    <div className="App">
-      {error ? (
-        <div>Error: {error.message}</div>
-      ) : (
-        <div className="biere-list">
-          {beerData.map((beer, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <div className="biere" key={index}>
-              <p>{beer.nom}</p>
-              <img src={beer.img} alt={beer.nom} />
-              <p>{beer.Prix}€</p>
-              <p>{beer.description}</p>
-              <p>{beer.type}</p>
-            </div>
-          ))}
-        </div>
-      )}
+    <div>
+      <Form />
     </div>
   );
 }
