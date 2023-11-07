@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function App() {
   const [beerData, setBeerData] = useState([]);
@@ -27,10 +28,10 @@ function App() {
             // eslint-disable-next-line react/no-array-index-key
             <div className="biere" key={index}>
               <p>{beer.nom}</p>
-              <img src={beer.img} alt={beer.nom} />
+              <Link to="Beer/1">
+                <img src={beer.img} alt={beer.nom} />
+              </Link>
               <p>{beer.Prix}€</p>
-              <p>{beer.description}</p>
-              <p>{beer.type}</p>
             </div>
           ))}
         </div>
@@ -40,3 +41,7 @@ function App() {
 }
 
 export default App;
+
+/*            <p>{beer.description}</p>
+              <p>{beer.type}</p> 
+*/
