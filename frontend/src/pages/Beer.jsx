@@ -24,19 +24,21 @@ function Beer() {
   }, [id]);
 
   return (
-    <div className="Beer">
-      {error ? (
-        <div>Error: {error.message}</div>
-      ) : (
-        beer && (
-          <div className="beer-details">
-            <h2>{beer.nom}</h2>
-            <img src={beer.img} alt={beer.nom} />
-            <p>{beer.price}€</p>
-            <p>{beer.description}</p>
-          </div>
-        )
-      )}
+    <div className="accueil">
+      <div className="Beer">
+        {error ? (
+          <div>Error: {error.message}</div>
+        ) : (
+          beer && (
+            <div className="beer-details">
+              <h2>{beer.nom}</h2>
+              <img src={beer.img} alt={beer.nom} />
+              <p>{beer.price}€</p>
+              <p>{beer.description}</p>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }

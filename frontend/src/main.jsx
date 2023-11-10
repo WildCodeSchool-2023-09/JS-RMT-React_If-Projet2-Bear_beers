@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Form, RouterProvider } from "react-router-dom";
 
 import Beer from "./pages/Beer";
 import App from "./App";
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "/Beer/:id",
     element: <Beer />,
+  },
+  {
+    path: "/Formulaire",
+    element: <Form />,
   },
 ]);
 
