@@ -1,7 +1,10 @@
-import axios from "axios";
-import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+import "./App.css";
+import Form from "./components/Form";
+
 
 function App() {
   const [beerData, setBeerData] = useState([]);
@@ -39,6 +42,7 @@ function App() {
           ))}
         </div>
       )}
+      <Form />
     </div>
   );
 }

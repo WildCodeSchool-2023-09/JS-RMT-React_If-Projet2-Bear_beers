@@ -78,6 +78,8 @@
 
 .insert {
   background-color: lightyellow;
+  height: 40px;
+  font-size: 25px;
   width: 300px;
 }
 
