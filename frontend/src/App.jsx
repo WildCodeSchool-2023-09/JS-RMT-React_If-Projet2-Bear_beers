@@ -1,20 +1,25 @@
+import axios from "axios";
 import "./App.css";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function App() {
   const [beerData, setBeerData] = useState([]);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/beer`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setBeerData(data))
-      .catch((err) => setError(err));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/beer`
+        );
+        setBeerData(response.data);
+      } catch (err) {
+        setError(err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (
@@ -27,10 +32,9 @@ function App() {
             // eslint-disable-next-line react/no-array-index-key
             <div className="biere" key={index}>
               <p>{beer.nom}</p>
-              <img src={beer.img} alt={beer.nom} />
-              <p>{beer.Prix}€</p>
-              <p>{beer.description}</p>
-              <p>{beer.type}</p>
+              <Link to={`/Beer/${beer.id}`}>
+                <img src={beer.img} alt={beer.nom} />
+              </Link>
             </div>
           ))}
         </div>
