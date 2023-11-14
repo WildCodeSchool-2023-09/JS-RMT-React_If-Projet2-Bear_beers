@@ -19,7 +19,7 @@
 }
 
 .banner {
-  background-image: url("src/assets/Banner_beers.png");
+  background-image: url("src/assets/banner_beers.png");
   background-size: cover;
   background-position: center;
   height: 300px;
@@ -54,7 +54,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
   text-align: center;
   color: white;
 }
@@ -78,9 +78,9 @@
 
 .insert {
   background-color: lightyellow;
-  width: 400px;
   height: 40px;
   font-size: 25px;
+  width: 300px;
 }
 
 .button {
