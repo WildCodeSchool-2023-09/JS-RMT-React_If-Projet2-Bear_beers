@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import "./Form.css";
 
@@ -37,43 +38,36 @@ function Form() {
         <nav>
           <ul className="navbar">
             <li>
-              <img
-                className="logo_navbar"
-                src="src/assets/Bear_beers.png"
-                alt="Logo du magasin"
-              />
+              <Link to="/">
+                <img
+                  className="logo_navbar"
+                  src="src/assets/Bear_beers.png"
+                  alt="Logo du magasin"
+                />
+              </Link>
             </li>
             <li>
-              <a href="https://www.canva.com/design/DAFxtsdpw88/KYuR8ivxQJjiAtaEFRkJOA/edit">
+              <Link to="/Formulaire">
                 <img
                   className="imgform"
                   src="src/assets/form.png"
                   alt="Formulaire"
                 />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.canva.com/design/DAFxtsdpw88/KYuR8ivxQJjiAtaEFRkJOA/edit">
-                <img
-                  className="panier"
-                  src="src/assets/Panier.png"
-                  alt="Panier"
-                />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
-      </header>
-      <div className="banner">
-        <div className="titrelogo">
-          <img
-            className="logo"
-            src="src/assets/Bear_beers.png"
-            alt="Logo du magasin"
-          />
-          <h1>Bear'Beers</h1>
+        <div className="banner">
+          <div className="titrelogo">
+            <img
+              className="logo"
+              src="src/assets/Bear_beers.png"
+              alt="Logo du magasin"
+            />
+            <h1>Bear'Beers</h1>
+          </div>
         </div>
-      </div>
+      </header>
       <h2 className="titre">Inscription à la NewsLetter</h2>
       <div className="form">
         <h3>Formulaire de Bear'Beers</h3>
