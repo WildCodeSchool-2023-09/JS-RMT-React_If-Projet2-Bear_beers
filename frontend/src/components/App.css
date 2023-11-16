@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  color: white;
+}
+
+nav {
+  display: grid;
+}
+
+.imgform {
+  width: 10%;
+  float: right;
+  max-width: 100px;
+}
+
+.App {
+  text-align: center;
+  background-color: #4f3627;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+.App2 {
+  background-color: #4f3627;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 20% 70% 10%;
+  align-items: center;
+  list-style: none;
+}
+
+.logo_navbar {
+  width: 30%;
+  display: flex;
+}
+
+.panier {
+  display: flex;
+  width: 50%;
+  float: right;
+  padding-right: 20%;
+}
+
+.logo {
+  display: flex;
+  width: 10%;
+}
+
+.banner {
+  background-image: url("src/assets/banner_beers.png");
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.titre {
+  color: white;
+  font-size: 300%;
+}
+
+.titre2 {
+  display: flex;
+  margin-left: 20%;
+  font-size: 400%;
+}
+
+.titrelogo {
+  color: white;
+  display: flex;
+}
+
+.Total {
+  display: flex;
+  padding-inline: 100px;
+  padding-bottom: 60px;
+  height: 600px;
+  width: 350px;
+  border: 5px solid lightgray;
+  border-radius: 2%;
+}
+
+.beer {
+  display: inline-block;
+}
+
+.beer p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #c19400;
+  font-size: x-large;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60vh;
+  text-align: center;
+  color: white;
+}
+
+.form h2 {
+  margin: 0 0 20px;
+}
+
+.form .imgform {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form label,
+.form input,
+.form select {
+  display: block;
+  border-radius: 10%;
+  margin-bottom: 5%;
+}
+
+.insert {
+  background-color: lightyellow;
+  height: 40px;
+  font-size: 25px;
+  width: 300px;
+}
+
+.button {
+  background-color: #c19400;
+  color: white;
+  width: 300px;
+  height: 40px;
+  font-size: 100%;
+  margin-top: 4%;
+}
+
+label {
+  font-size: 130%;
+}
+
+select {
+  font-size: 100%;
+}
+
+.Form2 {
+  font-size: 50px;
+  margin-left: 750px;
+  padding: 10px;
+  color: white;
+  border: white solid 5px;
+  border-radius: 6%;
+}
+
+.oursfin {
+  width: 35%;
+  margin-top: 30px;
+}
+
+.titre3 {
+  font-size: 300%;
+}
+
+h3 {
+  font-size: 225%;
+}
+
+.Form4 {
+  font-size: 40px;
+  margin-left: 222%;
+  padding: 10px;
+  color: white;
+  border: white solid 5px;
+  border-radius: 6%;
+}
+
+.Beer {
+  color: #c19400;
+  font-size: 180%;
+  background-color: #4f3627;
+}
+
+.Total {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.beer-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

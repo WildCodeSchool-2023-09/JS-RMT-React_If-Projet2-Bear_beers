@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import "./App.css";
+import "./components/App.css";
 
 function App() {
   const [beerData, setBeerData] = useState([]);
@@ -25,9 +25,9 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <header className="NavBar">
         <nav>
-          <ul className="navbar">
+          <ul>
             <li>
               <Link to="/">
                 <img
@@ -55,25 +55,42 @@ function App() {
               src="src/assets/Bear_beers.png"
               alt="Logo du magasin"
             />
-            <h1>Bear'Beers</h1>
+            <h1 className="titre2">Bear'Beers</h1>
           </div>
         </div>
       </header>
+      <main>
+        <h1 className="titre">Nos bières</h1>
+      </main>
       {error ? (
         <div>Error: {error.message}</div>
       ) : (
         <div className="biere-list">
           {beerData.map((beer, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <div className="biere" key={index}>
-              <p>{beer.title}</p>
+            <div className="beer" key={index}>
+              <p>
+                <b>{beer.title}</b>
+              </p>
               <Link to={`/Beer/${beer.id}`}>
-                <img src={beer.img} alt={beer.nom} />
+                <img className="Total" src={beer.img} alt={beer.title} />
               </Link>
             </div>
           ))}
         </div>
       )}
+      <footer>
+        <div className="bas">
+          <ul>
+            <li>
+              <a className="Form2" href="/Formulaire">
+                Formulaire
+              </a>
+            </li>
+          </ul>
+          <img className="oursfin" src="src/assets/bar-ours.png" alt="fin" />
+        </div>
+      </footer>
     </div>
   );
 }
