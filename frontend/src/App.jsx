@@ -66,9 +66,8 @@ function App() {
         <div>Error: {error.message}</div>
       ) : (
         <div className="biere-list">
-          {beerData.map((beer, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <div className="beer" key={index}>
+          {beerData.map((beer) => (
+            <div className="beer" key={beer.id}>
               <p>
                 <b>{beer.title}</b>
               </p>

@@ -49,9 +49,18 @@ ul {
   padding-right: 20%;
 }
 
-.logo {
-  display: flex;
-  width: 10%;
+@media screen and (max-width: 1200px) {
+  .logo {
+    display: flex;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    display: flex;
+    width: 200px;
+  }
 }
 
 .banner {
