@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { createBrowserRouter, Form, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Beer from "./pages/Beer";
+import Beer from "./components/Beer";
 import App from "./App";
+import Form from "./components/Form";
 
 const router = createBrowserRouter([
   {

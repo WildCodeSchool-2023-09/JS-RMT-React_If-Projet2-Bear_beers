@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import "./Form.css";
+import "./App.css";
 
 function Form() {
   const [nom, setNom] = useState("");
@@ -37,44 +38,37 @@ function Form() {
         <nav>
           <ul className="navbar">
             <li>
-              <img
-                className="logo_navbar"
-                src="src/assets/Bear_beers.png"
-                alt="Logo du magasin"
-              />
+              <Link to="/">
+                <img
+                  className="logo_navbar"
+                  src="src/assets/Bear_beers.png"
+                  alt="Logo du magasin"
+                />
+              </Link>
             </li>
             <li>
-              <a href="https://www.canva.com/design/DAFxtsdpw88/KYuR8ivxQJjiAtaEFRkJOA/edit">
+              <Link to="/Formulaire">
                 <img
                   className="imgform"
                   src="src/assets/form.png"
                   alt="Formulaire"
                 />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.canva.com/design/DAFxtsdpw88/KYuR8ivxQJjiAtaEFRkJOA/edit">
-                <img
-                  className="panier"
-                  src="src/assets/Panier.png"
-                  alt="Panier"
-                />
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
-      </header>
-      <div className="banner">
-        <div className="titrelogo">
-          <img
-            className="logo"
-            src="src/assets/Bear_beers.png"
-            alt="Logo du magasin"
-          />
-          <h1>Bear'Beers</h1>
+        <div className="banner">
+          <div className="titrelogo">
+            <img
+              className="logo"
+              src="src/assets/Bear_beers.png"
+              alt="Logo du magasin"
+            />
+            <h1 className="titre2">Bear'Beers</h1>
+          </div>
         </div>
-      </div>
-      <h2 className="titre">Inscription à la NewsLetter</h2>
+      </header>
+      <h2 className="titre3">Inscription à la NewsLetter</h2>
       <div className="form">
         <h3>Formulaire de Bear'Beers</h3>
         <form onSubmit={sendEmail}>
@@ -139,6 +133,18 @@ function Form() {
           </button>
         </form>
       </div>
+      <footer>
+        <div className="bas">
+          <ul>
+            <li>
+              <a className="Form4" href="/">
+                Accueil
+              </a>
+            </li>
+          </ul>
+          <img className="oursfin" src="src/assets/bar-ours.png" alt="fin" />
+        </div>
+      </footer>
     </div>
   );
 }
